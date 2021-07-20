@@ -1,0 +1,31 @@
+version: "3.7"
+
+services:
+  database:
+    image: postgres
+    container_name: database
+    restart: always
+    ports: 
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=super
+      - POSTGRES_PASSWORD=super12
+      - POSTGRES_DB=superApi
+    volumes: 
+      - pgdata:/data/postgres
+        
+  app:
+    build: .
+    container_name: market
+    ports:
+      - 3333:3333
+    volumes:
+      - .:/usr/app
+    links: 
+      - database
+    depends_on:
+      - database
+
+volumes: 
+  pgdata:
+    driver: local
