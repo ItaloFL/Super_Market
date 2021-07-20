@@ -35,7 +35,7 @@ This project **Supermarket** is a application for supermaket places, made for te
 ```bash
 
  #Clone the repository
- $ git clone https://github.com/ItaloFL/SuperMarket_Api.git
+ $ git clone https://github.com/ItaloFL/Super_Market.git
 
  #Enter project folder
  $ cd Supermarket_Api
