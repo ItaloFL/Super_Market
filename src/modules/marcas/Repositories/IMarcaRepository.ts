@@ -7,5 +7,6 @@ export interface IMarcaRepository{
   create({name, description}: ICreateMarcaDTO): Promise<Marca>
   findById(id: string): Promise<Marca>
   findByName(name: string): Promise<Marca>
+  list(): Promise<Marca[]>
 
 }

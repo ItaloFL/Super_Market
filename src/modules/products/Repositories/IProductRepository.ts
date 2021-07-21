@@ -16,4 +16,5 @@ export interface IProductRepository{
 
   findById(id: string): Promise<Product>
   findByName(name: string): Promise<Product>
+  list(): Promise<Product[]>
 }

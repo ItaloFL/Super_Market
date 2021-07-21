@@ -12,6 +12,7 @@ export class MarcaRepository implements IMarcaRepository{
   constructor(){
     this.repository = getRepository(Marca)
   }
+  
  
   async create({ name, description }: ICreateMarcaDTO): Promise<Marca> {
     
@@ -33,6 +34,10 @@ export class MarcaRepository implements IMarcaRepository{
     return await this.repository.findOne({
       name
     })
+  }
+
+  async list(): Promise<Marca[]> {
+    return await this.repository.find()
   }
 
 

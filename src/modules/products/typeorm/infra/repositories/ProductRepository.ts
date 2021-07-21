@@ -39,4 +39,8 @@ export class ProductRepository implements IProductRepository{
     })
   }
   
+  async list(): Promise<Product[]> {
+    return await this.repository.find()
+  }
+  
 }
