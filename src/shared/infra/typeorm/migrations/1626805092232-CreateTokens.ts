@@ -1,11 +1,11 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class CreateProduct1626584296299 implements MigrationInterface {
+export class CreateTokens1626805092232 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: "products",
+                name: "usersTokens",
                 columns: [
                     {
                         name: "id",
@@ -13,42 +13,39 @@ export class CreateProduct1626584296299 implements MigrationInterface {
                         isPrimary: true
                     },
                     {
-                        name: "marca_id",
+                        name: "user_id",
                         type: "uuid"
                     },
                     {
-                        name: "name",
+                        name: "refresh_token",
                         type: "varchar"
                     },
                     {
-                        name: "valor",
-                        type: "numeric"
-                    },
-                    {
-                        name: "quantidade",
-                        type: "varchar"
-                    },
-                    {
-                        name: "description",
-                        type: "varchar"
-                    },
-                    {
-                        name: "photo",
-                        type: "varchar"
+                        name: "expires_date",
+                        type: "timestamp"
                     },
                     {
                         name: "created_at",
                         type: "timestamp",
                         default: "now()"
                     }
-                    
                 ],
+                foreignKeys: [
+                    {
+                        name: "FKUserToken",
+                        referencedTableName: "users",
+                        referencedColumnNames: ["id"],
+                        columnNames: ["user_id"],
+                        onDelete: "CASCADE",
+                        onUpdate: "CASCADE"
+                    }
+                ]
             })
         )
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("products")
+        await queryRunner.dropTable("usersTokens")
     }
 
 }

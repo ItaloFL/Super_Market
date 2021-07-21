@@ -11,10 +11,6 @@ export class Product{
   @Column()
   name:string
 
-  @ManyToOne(() => Marca)
-  @JoinColumn({name: "marca_id"})
-  marca: Marca
-
   @Column()
   marca_id: string
 
