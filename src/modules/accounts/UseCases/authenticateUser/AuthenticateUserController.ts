@@ -17,6 +17,6 @@ export class AuthenticateUserController{
       password
     })
 
-    return response.status(200).json(token)
+    return response.json(token)
   }
 }

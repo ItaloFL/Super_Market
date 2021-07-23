@@ -1,4 +1,3 @@
-import { ListMarcasController } from '@modules/marcas/UseCases/listMarcas/ListMarcasController'
 import { CreateProductController } from '@modules/products/UseCases/createProduct/CreateProductController'
 import { ListProductsController } from '@modules/products/UseCases/listProducts/ListProductsController'
 import { Router } from 'express'

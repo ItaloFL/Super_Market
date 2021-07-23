@@ -40,8 +40,7 @@ export class CreateProduct1626584296299 implements MigrationInterface {
                         name: "created_at",
                         type: "timestamp",
                         default: "now()"
-                    }
-                    
+                    }  
                 ],
             })
         )
