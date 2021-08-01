@@ -1,3 +1,4 @@
+import auth from "@config/auth";
 import { AppError } from "@shared/errors/AppError";
 import { NextFunction, Request, Response } from "express";
 import { verify } from "jsonwebtoken";
@@ -19,7 +20,7 @@ export async function ensureAuthenticated(request: Request, response: Response, 
   try {
     const { sub: user_id} = verify(
       token,
-      process.env.API_SECRET_KEY
+      auth.secret_token
     ) as IPayLoad
 
     request.user = {
