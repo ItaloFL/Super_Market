@@ -27,6 +27,7 @@ This project **Supermarket** is a application for supermaket places, made for te
 - [Docker](https://www.docker.com/)
 - [PostgresSQL](https://www.postgresql.org/)
 - [Express](https://expressjs.com/pt-br/)
+- [Tsyringe](https://www.npmjs.com/package/tsyringe?activeTab=readme)
 
 ---
 
