@@ -57,3 +57,10 @@ This project **Supermarket** is a application for supermaket places, made for te
 
 Feito com 💜
 
+
+
+## Funcionalidades a serem feitas
+
+Barra de pesquisa
+Fotos do usuario
+

@@ -47,7 +47,7 @@ export class AuthenticateUserUseCase{
       throw new AppError("Usuario ou senha incorretos!")
     }
 
-    const token = await sign({}, process.env.API_SECRET_KEY, {
+    const token = sign({}, process.env.API_SECRET_KEY, {
       subject: user.id,
       expiresIn: auth.expires_in_token
     })
