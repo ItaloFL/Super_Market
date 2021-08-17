@@ -7,6 +7,7 @@ import auth from "@config/auth";
 import { IDateProvider } from "@shared/containers/providers/IDateProvider";
 import { IUsersTokensRepository } from "@modules/accounts/Repositories/IUsersTokensRepository";
 
+
 interface IRequest{
   email: string,
   password: string
@@ -41,7 +42,7 @@ export class AuthenticateUserUseCase{
       throw new AppError("Usuario ou senha incorretos!")
     }
 
-    const passwordMatch = compare(user.password, password)
+    const passwordMatch = await compare(user.password, password)
 
     if(!passwordMatch){
       throw new AppError("Usuario ou senha incorretos!")
