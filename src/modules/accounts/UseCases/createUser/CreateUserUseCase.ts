@@ -27,7 +27,9 @@ export class CreateUserUseCase{
     CNPJ,
     sexo,
     avatar,
-    isAdmin = false
+    isAdmin = false,
+    endereço,
+    CEP
   }: ICreateUserDTO): Promise<User>{
 
     const user = await this.userRepositoy.findByEmail(email)
@@ -52,7 +54,9 @@ export class CreateUserUseCase{
       CNPJ,
       sexo,
       isAdmin,
-      avatar
+      avatar,
+      endereço,
+      CEP
     })
 
     return createdUser

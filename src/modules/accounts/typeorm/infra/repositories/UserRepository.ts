@@ -12,7 +12,8 @@ export class UserRepository implements IUserRepository{
   constructor(){
     this.repository = getRepository(User)
   }
-  async create({ name, email, password, sexo, telefone, isAdmin, data_nascimento, avatar, CNPJ, CPF }: ICreateUserDTO): Promise<User> {
+  
+  async create({ name, email, password, sexo, telefone, isAdmin, data_nascimento, avatar, CNPJ, CPF, endereço, CEP}: ICreateUserDTO): Promise<User> {
   
     const user = this.repository.create({
       name,
@@ -24,7 +25,9 @@ export class UserRepository implements IUserRepository{
       CPF,
       avatar,
       data_nascimento,
-      isAdmin
+      isAdmin,
+      endereço,
+      CEP
     })
 
     await this.repository.save(user)

@@ -20,6 +20,12 @@ export class User{
   data_nascimento: string
 
   @Column()
+  endereço: string
+
+  @Column()
+  CEP: string
+
+  @Column()
   CPF: string
 
   @Column()

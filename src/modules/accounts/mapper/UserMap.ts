@@ -11,7 +11,9 @@ export class UserMap{
     sexo,
     telefone,
     CNPJ,
-    CPF
+    CPF,
+    endereço,
+    CEP
   }: IUserResponseDTO){
     const user = classToClass({
       name,
@@ -20,7 +22,9 @@ export class UserMap{
       sexo,
       telefone,
       CNPJ,
-      CPF
+      CPF,
+      endereço,
+      CEP
     })
     return user
   }

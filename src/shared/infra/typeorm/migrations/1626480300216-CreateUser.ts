@@ -25,6 +25,14 @@ export class CreateUser1626480300216 implements MigrationInterface {
                         type: "varchar"
                     },
                     {
+                        name: "endereço",
+                        type: "varchar"
+                    },
+                    {
+                        name: "CEP",
+                        type: "varchar"
+                    },
+                    {
                         name: "data_nascimento",
                         type: "varchar"
                     },

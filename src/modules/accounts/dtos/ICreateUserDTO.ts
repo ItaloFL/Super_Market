@@ -13,5 +13,7 @@ export interface ICreateUserDTO{
   telefone: string
   sexo: string
   isAdmin: boolean
+  endereço: string
+  CEP: string
   
 }

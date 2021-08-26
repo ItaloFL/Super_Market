@@ -16,7 +16,9 @@ export interface IUserRepository{
       data_nascimento,
       avatar,
       CNPJ,
-      CPF 
+      CPF ,
+      endereço,
+      CEP,
     }
   : ICreateUserDTO): Promise<User>
 

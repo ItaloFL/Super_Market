@@ -18,7 +18,9 @@ export class CreateUserController{
       CNPJ,
       sexo,
       avatar,
-      isAdmin
+      isAdmin,
+      endereço,
+      CEP
     } = request.body
 
     const createUserUseCase = container.resolve(CreateUserUseCase)
@@ -33,7 +35,9 @@ export class CreateUserController{
       CNPJ,
       sexo,
       avatar,
-      isAdmin
+      isAdmin,
+      endereço,
+      CEP
     })
 
 

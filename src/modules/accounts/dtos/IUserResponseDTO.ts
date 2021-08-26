@@ -6,5 +6,7 @@ export interface IUserResponseDTO{
   CNPJ?: string
   telefone: string
   sexo: string
+  endereço: string
+  CEP: string
 }
 

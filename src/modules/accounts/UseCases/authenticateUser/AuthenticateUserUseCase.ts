@@ -42,7 +42,7 @@ export class AuthenticateUserUseCase{
       throw new AppError("Usuario ou senha incorretos!")
     }
 
-    const passwordMatch = await compare(user.password, password)
+    const passwordMatch = await compare(password, user.password)
 
     if(!passwordMatch){
       throw new AppError("Usuario ou senha incorretos!")
