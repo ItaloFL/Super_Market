@@ -25,7 +25,7 @@ export class CreateMarca1626625713356 implements MigrationInterface {
                         type: "timestamp",
                         default: "now()"
                     }
-                ]
+                ],
             })
         )
     }

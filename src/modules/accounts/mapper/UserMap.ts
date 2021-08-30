@@ -10,7 +10,6 @@ export class UserMap{
     data_nascimento,
     sexo,
     telefone,
-    CNPJ,
     CPF,
     endereço,
     CEP
@@ -21,7 +20,6 @@ export class UserMap{
       data_nascimento,
       sexo,
       telefone,
-      CNPJ,
       CPF,
       endereço,
       CEP

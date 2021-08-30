@@ -13,6 +13,7 @@ export class ForeignKeyMarca1627053951959 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.dropForeignKey("products", "FKmarcaProducts")
     }
 
 }

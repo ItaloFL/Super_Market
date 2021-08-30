@@ -15,7 +15,6 @@ export interface IUserRepository{
       isAdmin,
       data_nascimento,
       avatar,
-      CNPJ,
       CPF ,
       endereço,
       CEP,

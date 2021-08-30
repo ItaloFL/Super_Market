@@ -29,9 +29,6 @@ export class User{
   CPF: string
 
   @Column()
-  CNPJ: string
-
-  @Column()
   avatar: string
 
   @Column()

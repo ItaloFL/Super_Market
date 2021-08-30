@@ -7,8 +7,7 @@ export interface ICreateUserDTO{
   email: string
   password: string
   data_nascimento: string
-  CPF?: string
-  CNPJ?: string
+  CPF: string
   avatar?: string
   telefone: string
   sexo: string
