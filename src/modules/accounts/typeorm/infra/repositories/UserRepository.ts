@@ -1,3 +1,4 @@
+import { IUserUpdateDTO } from "@modules/accounts/dtos/IUserUpdateDTO";
 import { getRepository, Repository } from "typeorm";
 import { ICreateUserDTO } from "../../../dtos/ICreateUserDTO";
 import { IUserRepository } from "../../../Repositories/IUserRepository";
@@ -44,5 +45,15 @@ export class UserRepository implements IUserRepository{
     })
   }
 
+  async update( data: IUserUpdateDTO): Promise<User> {
+    
+    let user = await this.repository.findOne(data.id)
 
+    user = {...user, ...data}
+
+    const newUser = await this.repository.save(user)
+
+    return newUser
+  }
+  
 }

@@ -8,15 +8,14 @@ export class SearchProductsController{
 
   async handle(request: Request, response: Response): Promise<Response>{
 
-    const { productName, marcaName } = request.params
+    const { productName } = request.params
 
     const searchProductsUseCase = container.resolve(SearchProductsUseCase)
 
-    await searchProductsUseCase.execute({
-      productName,
-      marcaName
+    const product = await searchProductsUseCase.execute({
+      productName
     })
 
-    return response.send()
+    return response.status(200).json(product)
   }
 }

@@ -57,6 +57,8 @@ export class CreateUserUseCase{
       CEP
     })
 
+    delete createdUser.password
+
     return createdUser
   }
 

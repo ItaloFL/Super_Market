@@ -12,7 +12,7 @@ const searchProductsController = new SearchProductsController()
 
 productRoutes.post("/", ensureAuthenticated, createProductController.handle)
 productRoutes.get("/list", ensureAuthenticated, listProductsController.handle)
-productRoutes.get("/search", ensureAuthenticated, searchProductsController.handle)
+productRoutes.get("/search/:productName", ensureAuthenticated, searchProductsController.handle)
 
 
 export { productRoutes }

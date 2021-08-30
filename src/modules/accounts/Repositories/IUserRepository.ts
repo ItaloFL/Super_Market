@@ -1,4 +1,5 @@
 import { ICreateUserDTO } from "../dtos/ICreateUserDTO";
+import { IUserUpdateDTO } from "../dtos/IUserUpdateDTO";
 import { User } from "../typeorm/infra/entities/User";
 
 
@@ -23,5 +24,6 @@ export interface IUserRepository{
 
   findById(id: string): Promise<User>
   findByEmail(email: string): Promise<User>
+  update( data : IUserUpdateDTO): Promise<User>
 
 }

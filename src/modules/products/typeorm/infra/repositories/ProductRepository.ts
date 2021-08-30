@@ -43,12 +43,11 @@ export class ProductRepository implements IProductRepository{
     return await this.repository.find()
   }
 
-  async search(productName?: string, marcaName?: string): Promise<Product[]> {
+  async search(name?: string): Promise<Product[]> {
     
     const products = await this.repository.find({
       where:{
-        productName: Like(`%${productName}%`),
-        marcaName: Like(`%${marcaName}%`)
+        name: Like(`%${name}%`),
       },
       select: [
         "name",

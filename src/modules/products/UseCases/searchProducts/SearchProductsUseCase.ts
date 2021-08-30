@@ -4,7 +4,6 @@ import { inject, injectable } from "tsyringe";
 
 interface IRequest{
   productName: string
-  marcaName: string
 }
 
 @injectable()
@@ -15,9 +14,9 @@ export class SearchProductsUseCase{
     private productRepository: IProductRepository
   ){}
 
-  async execute({ productName, marcaName }: IRequest){
+  async execute({ productName }: IRequest){
 
-    const product = await this.productRepository.search(productName, marcaName)
+    const product = await this.productRepository.search(productName)
 
     return product
   }
