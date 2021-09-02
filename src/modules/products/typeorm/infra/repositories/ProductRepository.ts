@@ -1,4 +1,5 @@
 import { ICreateProductDTO } from "@modules/products/dtos/ICreateProductDTO";
+import { IUpdateProductDTO } from "@modules/products/dtos/IUpdateProductDTO";
 import { IProductRepository } from "@modules/products/Repositories/IProductRepository";
 import { getRepository, Like, Repository } from "typeorm";
 import { Product } from "../entities/Product";
@@ -12,7 +13,7 @@ export class ProductRepository implements IProductRepository{
   constructor(){
     this.repository = getRepository(Product)
   }
- 
+  
   async create({name, marca_id,  description, quantidade, valor, photo}: ICreateProductDTO): Promise<Product> {
     
     const product = this.repository.create({
@@ -61,6 +62,18 @@ export class ProductRepository implements IProductRepository{
 
     return products
   }
+
+  async update(data: IUpdateProductDTO): Promise<Product> {
+    
+    let product = await this.repository.findOne(data.id)
+
+    product = {...product, ...data}
+
+    const newProduct = await this.repository.save(product)
+
+    return newProduct
+  }
+ 
   
   
 }

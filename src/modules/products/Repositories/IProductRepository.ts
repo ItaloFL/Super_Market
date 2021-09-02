@@ -1,4 +1,5 @@
 import { ICreateProductDTO } from "../dtos/ICreateProductDTO";
+import { IUpdateProductDTO } from "../dtos/IUpdateProductDTO";
 import { Product } from "../typeorm/infra/entities/Product";
 
 
@@ -18,4 +19,5 @@ export interface IProductRepository{
   findByName(name: string): Promise<Product>
   list(): Promise<Product[]>
   search(name: string): Promise<Product[]>
+  update(data: IUpdateProductDTO): Promise<Product>
 }
