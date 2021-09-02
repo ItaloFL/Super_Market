@@ -9,6 +9,8 @@ import { IUsersTokensRepository } from '@modules/accounts/Repositories/IUsersTok
 import { UsersTokensRepository } from '@modules/accounts/typeorm/infra/repositories/UsersTokensRepository'
 import { IDateProvider } from './providers/IDateProvider'
 import { DateProvider } from './providers/implementations/DateProvider'
+import { ICarrinhoRepository } from '@modules/carrinho/Repositories/ICarrinhosRepository'
+import { CarrinhoRepository } from '@modules/carrinho/typeorm/repositories/CarrinhoRepository'
 
 
 
@@ -20,6 +22,11 @@ container.registerSingleton<IUserRepository>(
 container.registerSingleton<IProductRepository>(
   "ProductRepository",
   ProductRepository
+)
+
+container.registerSingleton<ICarrinhoRepository>(
+  "CarrinhoRepository",
+  CarrinhoRepository
 )
 
 container.registerSingleton<IMarcaRepository>(
