@@ -8,6 +8,7 @@ export class AddProductCarrinhoController{
 
   async handle(request: Request, response: Response): Promise<Response>{
 
+
     const { name, photo, quantidade, valor } = request.body
 
     const addProductCarrinhoUseCase = container.resolve(AddProductCarrinhoUseCase)

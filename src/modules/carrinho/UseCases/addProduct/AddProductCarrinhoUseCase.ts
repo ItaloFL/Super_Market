@@ -1,10 +1,9 @@
 import { ICarrinhoDTO } from "@modules/carrinho/dtos/ICarrinhoDTO";
 import { ICarrinhoRepository } from "@modules/carrinho/Repositories/ICarrinhosRepository";
-import { IProductRepository } from "@modules/products/Repositories/IProductRepository";
-import { inject } from "tsyringe";
+import { inject, injectable } from "tsyringe";
 
 
-
+@injectable()
 export class AddProductCarrinhoUseCase{
 
   constructor(
